@@ -1,4 +1,4 @@
-package com.xupt.aspect.xml;
+package com.xupt.aspect.annotation;
 
 public interface UserService {
 	public void addUser();
