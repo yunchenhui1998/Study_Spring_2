@@ -1,4 +1,4 @@
-package com.xupt.c3p0;
+package com.xupt.properties;
 
 import java.util.List;
 
@@ -8,21 +8,19 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.xupt.domain.User;
 
-public class TestC3P0 {
+public class TestProp {
 	@Test
 	public void Demo01() {
-		User user=new User();
-		user.setId(1);
-		user.setUsername("杰克");
-		user.setPassword("999");
-		String xmlPath="com/xupt/c3p0/applicationContext.xml";
+		String xmlPath="com/xupt/properties/applicationContext.xml";
 		ApplicationContext applicationContext=new ClassPathXmlApplicationContext(xmlPath);
 		//获得代理类
 		UserDAO userDAO=(UserDAO) applicationContext.getBean("userDAO"); 
 //		userDAO.update(user);
-		List<User> allUser = userDAO.findAll();
-		for(User uer:allUser) {
-			System.out.println(user);
-		}
+//		List<User> allUser = userDAO.findAll();
+//		for(User user:allUser) {
+//			System.out.println(user);
+//		}
+		User user=userDAO.getById(1);
+		System.out.println(user);
 	}
 }

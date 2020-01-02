@@ -1,4 +1,4 @@
-package com.xupt.c3p0;
+package com.xupt.properties;
 
 import java.util.List;
 
@@ -26,5 +26,9 @@ public class UserDAO extends JdbcDaoSupport{
 
 	public List<User> findAll() {
 		return this.getJdbcTemplate().query("select * from user",new BeanPropertyRowMapper(User.class));
+	}
+
+	public User getById(int i) {
+		return this.getJdbcTemplate().queryForObject("select * from user where id = ?",BeanPropertyRowMapper.newInstance(User.class),i);
 	}
 }
