@@ -17,7 +17,7 @@
 			interfaces:确定接口的
 						通过多个值通过array
 						只有一个值，value=""
-			target:确定目标类
+			target:确定目标类，设置一个值用ref
 			interceptorNames:通知切面类的名称，类型String[],设置一个值value=""
 	-->
 	
